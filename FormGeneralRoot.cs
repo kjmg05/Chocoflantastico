@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace chocoflantastico
 {
-    public partial class Form1 : Form
+    public partial class FormGeneralRoot : Form
     {
-        public Form1()
+        public FormGeneralRoot()
         {
             InitializeComponent();
+        }
+
+        private void pbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
