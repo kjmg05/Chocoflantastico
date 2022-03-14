@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace chocoflantastico
 {
-    public partial class FormGeneral : Form
+    public partial class FormInventario : Form
     {
-        public FormGeneral()
+        public FormInventario()
         {
             InitializeComponent();
         }
 
-        private void pbCerrarSesion_Click(object sender, EventArgs e)
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Close();
-        }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void pbCerrar_Click(object sender, EventArgs e)
