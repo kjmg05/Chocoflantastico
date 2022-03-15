@@ -57,7 +57,7 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnInhabilitar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pbCerrarSesion = new System.Windows.Forms.PictureBox();
@@ -199,7 +199,7 @@
             this.gbInventarioPane.Controls.Add(this.lblCategoria);
             this.gbInventarioPane.Controls.Add(this.btnModificar);
             this.gbInventarioPane.Controls.Add(this.label5);
-            this.gbInventarioPane.Controls.Add(this.btnEliminar);
+            this.gbInventarioPane.Controls.Add(this.btnInhabilitar);
             this.gbInventarioPane.Controls.Add(this.btnGuardar);
             this.gbInventarioPane.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.gbInventarioPane.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(44)))), ((int)(((byte)(43)))));
@@ -219,7 +219,7 @@
             this.dgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -258,7 +258,7 @@
             this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
-            this.id.Width = 55;
+            this.id.Width = 57;
             // 
             // producto
             // 
@@ -267,7 +267,7 @@
             this.producto.HeaderText = "Producto";
             this.producto.MinimumWidth = 6;
             this.producto.Name = "producto";
-            this.producto.Width = 111;
+            this.producto.Width = 119;
             // 
             // categoria
             // 
@@ -276,7 +276,7 @@
             this.categoria.HeaderText = "Categoria";
             this.categoria.MinimumWidth = 6;
             this.categoria.Name = "categoria";
-            this.categoria.Width = 119;
+            this.categoria.Width = 128;
             // 
             // existencia
             // 
@@ -285,7 +285,7 @@
             this.existencia.HeaderText = "Existencia";
             this.existencia.MinimumWidth = 6;
             this.existencia.Name = "existencia";
-            this.existencia.Width = 120;
+            this.existencia.Width = 126;
             // 
             // numericUpDown1
             // 
@@ -356,15 +356,15 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "Existencia del Producto:";
             // 
-            // btnEliminar
+            // btnInhabilitar
             // 
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(258, 392);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(105, 41);
-            this.btnEliminar.TabIndex = 35;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnInhabilitar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInhabilitar.Location = new System.Drawing.Point(258, 392);
+            this.btnInhabilitar.Name = "btnInhabilitar";
+            this.btnInhabilitar.Size = new System.Drawing.Size(105, 41);
+            this.btnInhabilitar.TabIndex = 35;
+            this.btnInhabilitar.Text = "Inhabilitar";
+            this.btnInhabilitar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
@@ -490,7 +490,7 @@
         public System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnInhabilitar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
