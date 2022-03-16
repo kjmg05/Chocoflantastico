@@ -32,5 +32,11 @@ namespace chocoflantastico
             this.Hide();
             new FormInventario().Show();
         }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormUsers().Show();
+        }
     }
 }

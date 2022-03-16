@@ -31,5 +31,10 @@ namespace chocoflantastico
         {
             Application.Exit();
         }
+
+        private void pnlForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
