@@ -22,7 +22,7 @@ namespace chocoflantastico
             if (txtUser.Text == "Usuario")
             {
                 txtUser.Text = "";
-                txtUser.ForeColor = Color.LightGray;
+                txtUser.ForeColor = Color.Black;
             }
         }
 
@@ -40,7 +40,7 @@ namespace chocoflantastico
             if (txtPass.Text == "Contraseña")
             {
                 txtPass.Text = "";
-                txtPass.ForeColor = Color.LightGray;
+                txtPass.ForeColor = Color.Black;
                 txtPass.UseSystemPasswordChar = true;
             }
         }
@@ -57,8 +57,22 @@ namespace chocoflantastico
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new FormGeneralRoot().Show();
+            Usuario usuario = new Usuario();
+
+            usuario.User = txtUser.Text;
+            usuario.Pass = txtPass.Text;
+            usuario.connection.Open();
+            if (usuario.Autenticacion("exec InicioSesion '" + usuario.User + "', '" + usuario.Pass + "'"))
+            {
+                this.Hide();
+            }
+            else
+            {
+                pbError.Visible = true;
+                lblError.Visible = true;
+                lblError.Text = "Usuario y/o Contraseña Incorrecto";
+            }
+            usuario.connection.Close();
         }
     }
 }

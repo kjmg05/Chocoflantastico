@@ -96,6 +96,7 @@ namespace chocoflantastico
             this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMinimizar.TabIndex = 3;
             this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             // 
             // lblUser
             // 
@@ -104,7 +105,7 @@ namespace chocoflantastico
             this.lblUser.ForeColor = System.Drawing.Color.White;
             this.lblUser.Location = new System.Drawing.Point(119, 11);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(109, 27);
+            this.lblUser.Size = new System.Drawing.Size(113, 28);
             this.lblUser.TabIndex = 2;
             this.lblUser.Text = "USUARIO";
             // 
@@ -154,6 +155,7 @@ namespace chocoflantastico
             this.btnCerrarSesion.Text = "CERRAR SESION";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
             // 
             // pbCerrarSesion
             // 
@@ -166,6 +168,7 @@ namespace chocoflantastico
             this.pbCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCerrarSesion.TabIndex = 16;
             this.pbCerrarSesion.TabStop = false;
+            this.pbCerrarSesion.Click += new System.EventHandler(this.pbCerrarSesion_Click_1);
             // 
             // gbReporte
             // 
