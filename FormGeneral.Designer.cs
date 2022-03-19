@@ -67,7 +67,7 @@ namespace chocoflantastico
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1180, 55);
             this.panel1.TabIndex = 0;
@@ -77,7 +77,7 @@ namespace chocoflantastico
             this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCerrar.Image = global::chocoflantastico.Properties.Resources.windowclose_104378;
             this.pbCerrar.Location = new System.Drawing.Point(1135, 10);
-            this.pbCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.pbCerrar.Name = "pbCerrar";
             this.pbCerrar.Size = new System.Drawing.Size(29, 30);
             this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,12 +90,13 @@ namespace chocoflantastico
             this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMinimizar.Image = global::chocoflantastico.Properties.Resources.windowminimize_104316;
             this.pbMinimizar.Location = new System.Drawing.Point(1097, 10);
-            this.pbMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.pbMinimizar.Name = "pbMinimizar";
             this.pbMinimizar.Size = new System.Drawing.Size(29, 30);
             this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMinimizar.TabIndex = 3;
             this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             // 
             // lblUser
             // 
@@ -104,7 +105,7 @@ namespace chocoflantastico
             this.lblUser.ForeColor = System.Drawing.Color.White;
             this.lblUser.Location = new System.Drawing.Point(119, 11);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(109, 27);
+            this.lblUser.Size = new System.Drawing.Size(113, 28);
             this.lblUser.TabIndex = 2;
             this.lblUser.Text = "USUARIO";
             // 
@@ -132,7 +133,7 @@ namespace chocoflantastico
             this.pnlForm.Controls.Add(this.lblHora);
             this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlForm.Location = new System.Drawing.Point(0, 55);
-            this.pnlForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlForm.Margin = new System.Windows.Forms.Padding(4);
             this.pnlForm.Name = "pnlForm";
             this.pnlForm.Size = new System.Drawing.Size(1180, 610);
             this.pnlForm.TabIndex = 2;
@@ -153,6 +154,7 @@ namespace chocoflantastico
             this.btnCerrarSesion.Text = "CERRAR SESION";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
             // 
             // pbCerrarSesion
             // 
@@ -165,6 +167,7 @@ namespace chocoflantastico
             this.pbCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCerrarSesion.TabIndex = 16;
             this.pbCerrarSesion.TabStop = false;
+            this.pbCerrarSesion.Click += new System.EventHandler(this.pbCerrarSesion_Click_1);
             // 
             // gbReporte
             // 
@@ -173,9 +176,9 @@ namespace chocoflantastico
             this.gbReporte.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.gbReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(44)))), ((int)(((byte)(43)))));
             this.gbReporte.Location = new System.Drawing.Point(616, 122);
-            this.gbReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbReporte.Margin = new System.Windows.Forms.Padding(4);
             this.gbReporte.Name = "gbReporte";
-            this.gbReporte.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbReporte.Padding = new System.Windows.Forms.Padding(4);
             this.gbReporte.Size = new System.Drawing.Size(508, 326);
             this.gbReporte.TabIndex = 15;
             this.gbReporte.TabStop = false;
@@ -185,7 +188,7 @@ namespace chocoflantastico
             // 
             this.pictureBox3.Image = global::chocoflantastico.Properties.Resources.reporte;
             this.pictureBox3.Location = new System.Drawing.Point(85, 66);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(340, 139);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -201,7 +204,7 @@ namespace chocoflantastico
             this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(44)))), ((int)(((byte)(43)))));
             this.btnReporte.Location = new System.Drawing.Point(124, 231);
-            this.btnReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(272, 57);
             this.btnReporte.TabIndex = 0;
@@ -215,9 +218,9 @@ namespace chocoflantastico
             this.gbInventario.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.gbInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(44)))), ((int)(((byte)(43)))));
             this.gbInventario.Location = new System.Drawing.Point(65, 122);
-            this.gbInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbInventario.Margin = new System.Windows.Forms.Padding(4);
             this.gbInventario.Name = "gbInventario";
-            this.gbInventario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbInventario.Padding = new System.Windows.Forms.Padding(4);
             this.gbInventario.Size = new System.Drawing.Size(508, 326);
             this.gbInventario.TabIndex = 14;
             this.gbInventario.TabStop = false;
@@ -227,7 +230,7 @@ namespace chocoflantastico
             // 
             this.pictureBox1.Image = global::chocoflantastico.Properties.Resources.inv;
             this.pictureBox1.Location = new System.Drawing.Point(85, 66);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(340, 139);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -243,7 +246,7 @@ namespace chocoflantastico
             this.btnInventario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(44)))), ((int)(((byte)(43)))));
             this.btnInventario.Location = new System.Drawing.Point(124, 231);
-            this.btnInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInventario.Margin = new System.Windows.Forms.Padding(4);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(272, 57);
             this.btnInventario.TabIndex = 0;
@@ -291,7 +294,7 @@ namespace chocoflantastico
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormGeneral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGeneral";

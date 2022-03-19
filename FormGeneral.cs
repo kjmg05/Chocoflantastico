@@ -12,9 +12,10 @@ namespace chocoflantastico
 {
     public partial class FormGeneral : Form
     {
-        public FormGeneral()
+        public FormGeneral(string nombre)
         {
             InitializeComponent();
+            lblUser.Text = nombre;
         }
 
         private void pbCerrarSesion_Click(object sender, EventArgs e)
@@ -29,7 +30,35 @@ namespace chocoflantastico
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("¿Está seguro que desea cerrar la aplicación", "CHOCOFLANTASTICO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Está seguro que desea cerrar la aplicación", "CHOCOFLANTASTICO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+
+        }
+
+        private void pbCerrarSesion_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Está seguro que desea cerrar la aplicación", "CHOCOFLANTASTICO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void pbMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
