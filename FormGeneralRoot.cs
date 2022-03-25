@@ -65,5 +65,11 @@ namespace chocoflantastico
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FormUsers().Show();
+        }
     }
 }
