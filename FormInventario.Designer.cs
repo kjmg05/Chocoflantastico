@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
@@ -57,7 +59,7 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudExistecia = new System.Windows.Forms.NumericUpDown();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -74,6 +76,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorProviderApp = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
@@ -81,8 +84,9 @@
             this.pnlForm.SuspendLayout();
             this.gbState.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExistecia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -158,7 +162,7 @@
             this.pnlForm.Controls.Add(this.lblDesc);
             this.pnlForm.Controls.Add(this.txtDesc);
             this.pnlForm.Controls.Add(this.dgvInventario);
-            this.pnlForm.Controls.Add(this.numericUpDown1);
+            this.pnlForm.Controls.Add(this.nudExistecia);
             this.pnlForm.Controls.Add(this.cmbCategoria);
             this.pnlForm.Controls.Add(this.lblNombre);
             this.pnlForm.Controls.Add(this.txtNombre);
@@ -199,6 +203,7 @@
             this.dtpFechaCaducidad.Name = "dtpFechaCaducidad";
             this.dtpFechaCaducidad.Size = new System.Drawing.Size(285, 22);
             this.dtpFechaCaducidad.TabIndex = 56;
+            this.dtpFechaCaducidad.Validating += new System.ComponentModel.CancelEventHandler(this.dtpFechaCaducidad_Validating);
             // 
             // gbState
             // 
@@ -253,6 +258,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(127, 28);
             this.txtPrecio.TabIndex = 53;
+            this.txtPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrecio_Validating);
             // 
             // lblDesc
             // 
@@ -273,6 +279,7 @@
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(334, 28);
             this.txtDesc.TabIndex = 51;
+            this.txtDesc.Validating += new System.ComponentModel.CancelEventHandler(this.txtDesc_Validating);
             // 
             // dgvInventario
             // 
@@ -385,14 +392,15 @@
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
             // 
-            // numericUpDown1
+            // nudExistecia
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(277, 248);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(92, 28);
-            this.numericUpDown1.TabIndex = 48;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudExistecia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudExistecia.Location = new System.Drawing.Point(277, 248);
+            this.nudExistecia.Name = "nudExistecia";
+            this.nudExistecia.Size = new System.Drawing.Size(92, 28);
+            this.nudExistecia.TabIndex = 48;
+            this.nudExistecia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudExistecia.Validating += new System.ComponentModel.CancelEventHandler(this.nudExistecia_Validating);
             // 
             // cmbCategoria
             // 
@@ -402,6 +410,7 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(257, 27);
             this.cmbCategoria.TabIndex = 47;
+            this.cmbCategoria.Validating += new System.ComponentModel.CancelEventHandler(this.cmbCategoria_Validating);
             // 
             // lblNombre
             // 
@@ -421,6 +430,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(252, 28);
             this.txtNombre.TabIndex = 46;
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // lblCategoria
             // 
@@ -573,6 +583,11 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "-";
             // 
+            // errorProviderApp
+            // 
+            this.errorProviderApp.ContainerControl = this;
+            this.errorProviderApp.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderApp.Icon")));
+            // 
             // FormInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -594,8 +609,9 @@
             this.gbState.ResumeLayout(false);
             this.gbState.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExistecia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -617,7 +633,7 @@
         public System.Windows.Forms.Label lblFecha;
         public System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.DataGridView dgvInventario;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudExistecia;
         private System.Windows.Forms.ComboBox cmbCategoria;
         public System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
@@ -642,5 +658,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
+        private System.Windows.Forms.ErrorProvider errorProviderApp;
     }
 }
