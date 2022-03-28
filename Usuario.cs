@@ -33,12 +33,12 @@ namespace chocoflantastico
                 if (table.Rows[0][0].ToString() == "1")
                 {
                     user = table.Rows[0][1].ToString();
-                    new FormGeneralRoot(table.Rows[0][1].ToString()).Show();
+                    new FormGeneralRoot(table.Rows[0][1].ToString(), 1).Show();
                 }
                 else
                 {
                     user = table.Rows[0][1].ToString();
-                    new FormGeneral(table.Rows[0][1].ToString()).Show();
+                    new FormGeneralRoot(table.Rows[0][1].ToString(), 2).Show();
                 }
 
                 return true;

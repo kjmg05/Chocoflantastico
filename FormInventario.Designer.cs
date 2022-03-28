@@ -40,7 +40,23 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.lblFechaCaducidad = new System.Windows.Forms.Label();
+            this.dtpFechaCaducidad = new System.Windows.Forms.DateTimePicker();
+            this.gbState = new System.Windows.Forms.GroupBox();
+            this.rbHabilitado = new System.Windows.Forms.RadioButton();
+            this.rbInhabilitado = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -58,29 +74,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblDesc = new System.Windows.Forms.Label();
-            this.txtDesc = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.gbState = new System.Windows.Forms.GroupBox();
-            this.rbHabilitado = new System.Windows.Forms.RadioButton();
-            this.rbInhabilitado = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlForm.SuspendLayout();
+            this.gbState.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).BeginInit();
-            this.gbState.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -148,6 +150,8 @@
             // 
             this.pnlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlForm.Controls.Add(this.lblFechaCaducidad);
+            this.pnlForm.Controls.Add(this.dtpFechaCaducidad);
             this.pnlForm.Controls.Add(this.gbState);
             this.pnlForm.Controls.Add(this.label7);
             this.pnlForm.Controls.Add(this.txtPrecio);
@@ -178,8 +182,102 @@
             this.pnlForm.Size = new System.Drawing.Size(1180, 665);
             this.pnlForm.TabIndex = 18;
             // 
+            // lblFechaCaducidad
+            // 
+            this.lblFechaCaducidad.AutoSize = true;
+            this.lblFechaCaducidad.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaCaducidad.ForeColor = System.Drawing.Color.DimGray;
+            this.lblFechaCaducidad.Location = new System.Drawing.Point(627, 224);
+            this.lblFechaCaducidad.Name = "lblFechaCaducidad";
+            this.lblFechaCaducidad.Size = new System.Drawing.Size(163, 19);
+            this.lblFechaCaducidad.TabIndex = 57;
+            this.lblFechaCaducidad.Text = "Fecha Caducidad:";
+            // 
+            // dtpFechaCaducidad
+            // 
+            this.dtpFechaCaducidad.Location = new System.Drawing.Point(809, 222);
+            this.dtpFechaCaducidad.Name = "dtpFechaCaducidad";
+            this.dtpFechaCaducidad.Size = new System.Drawing.Size(285, 22);
+            this.dtpFechaCaducidad.TabIndex = 56;
+            // 
+            // gbState
+            // 
+            this.gbState.Controls.Add(this.rbHabilitado);
+            this.gbState.Controls.Add(this.rbInhabilitado);
+            this.gbState.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.gbState.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.gbState.Location = new System.Drawing.Point(631, 114);
+            this.gbState.Name = "gbState";
+            this.gbState.Size = new System.Drawing.Size(463, 71);
+            this.gbState.TabIndex = 55;
+            this.gbState.TabStop = false;
+            this.gbState.Text = "Estado";
+            // 
+            // rbHabilitado
+            // 
+            this.rbHabilitado.AutoSize = true;
+            this.rbHabilitado.Checked = true;
+            this.rbHabilitado.Location = new System.Drawing.Point(61, 32);
+            this.rbHabilitado.Name = "rbHabilitado";
+            this.rbHabilitado.Size = new System.Drawing.Size(113, 23);
+            this.rbHabilitado.TabIndex = 1;
+            this.rbHabilitado.TabStop = true;
+            this.rbHabilitado.Text = "Habilitado";
+            this.rbHabilitado.UseVisualStyleBackColor = true;
+            // 
+            // rbInhabilitado
+            // 
+            this.rbInhabilitado.AutoSize = true;
+            this.rbInhabilitado.Location = new System.Drawing.Point(255, 32);
+            this.rbInhabilitado.Name = "rbInhabilitado";
+            this.rbInhabilitado.Size = new System.Drawing.Size(126, 23);
+            this.rbInhabilitado.TabIndex = 0;
+            this.rbInhabilitado.Text = "Inhabilitado";
+            this.rbInhabilitado.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(62, 209);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 19);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "Precio Actual:";
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(277, 206);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(127, 28);
+            this.txtPrecio.TabIndex = 53;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AccessibleDescription = "Descripcion general del producto";
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDesc.Location = new System.Drawing.Point(62, 166);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(112, 19);
+            this.lblDesc.TabIndex = 50;
+            this.lblDesc.Text = "Descripcion:";
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(277, 163);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(334, 28);
+            this.txtDesc.TabIndex = 51;
+            // 
             // dgvInventario
             // 
+            this.dgvInventario.AllowUserToAddRows = false;
+            this.dgvInventario.AllowUserToDeleteRows = false;
             this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventario.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -201,8 +299,9 @@
             this.estado,
             this.categoria});
             this.dgvInventario.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvInventario.Location = new System.Drawing.Point(40, 281);
+            this.dgvInventario.Location = new System.Drawing.Point(40, 332);
             this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
@@ -216,13 +315,80 @@
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInventario.RowTemplate.Height = 24;
-            this.dgvInventario.Size = new System.Drawing.Size(1084, 333);
+            this.dgvInventario.Size = new System.Drawing.Size(1084, 282);
             this.dgvInventario.TabIndex = 49;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 57;
+            // 
+            // producto
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.producto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.producto.FillWeight = 121.8533F;
+            this.producto.HeaderText = "Producto";
+            this.producto.MinimumWidth = 6;
+            this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.FillWeight = 158.8191F;
+            this.description.HeaderText = "Descripción";
+            this.description.MinimumWidth = 6;
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // precioActual
+            // 
+            this.precioActual.FillWeight = 90.68002F;
+            this.precioActual.HeaderText = "Precio Actual";
+            this.precioActual.MinimumWidth = 6;
+            this.precioActual.Name = "precioActual";
+            this.precioActual.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.FillWeight = 85.39642F;
+            this.cantidad.HeaderText = "Existencia";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.FalseValue = "Inactivo";
+            this.estado.FillWeight = 47.59894F;
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.estado.TrueValue = "Activo";
+            // 
+            // categoria
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoria.DefaultCellStyle = dataGridViewCellStyle4;
+            this.categoria.FillWeight = 95.65217F;
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.MinimumWidth = 6;
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(251, 241);
+            this.numericUpDown1.Location = new System.Drawing.Point(277, 248);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(92, 28);
             this.numericUpDown1.TabIndex = 48;
@@ -232,7 +398,7 @@
             // 
             this.cmbCategoria.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(811, 187);
+            this.cmbCategoria.Location = new System.Drawing.Point(277, 289);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(257, 27);
             this.cmbCategoria.TabIndex = 47;
@@ -242,7 +408,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNombre.Location = new System.Drawing.Point(36, 117);
+            this.lblNombre.Location = new System.Drawing.Point(62, 124);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(190, 19);
             this.lblNombre.TabIndex = 40;
@@ -251,7 +417,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(251, 114);
+            this.txtNombre.Location = new System.Drawing.Point(277, 121);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(252, 28);
             this.txtNombre.TabIndex = 46;
@@ -261,28 +427,29 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCategoria.Location = new System.Drawing.Point(601, 190);
+            this.lblCategoria.Location = new System.Drawing.Point(62, 292);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(204, 19);
+            this.lblCategoria.Size = new System.Drawing.Size(95, 19);
             this.lblCategoria.TabIndex = 41;
-            this.lblCategoria.Text = "Categoria del Producto:";
+            this.lblCategoria.Text = "Categoria:";
             // 
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(614, 223);
+            this.btnModificar.Location = new System.Drawing.Point(631, 281);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(105, 41);
+            this.btnModificar.Size = new System.Drawing.Size(136, 41);
             this.btnModificar.TabIndex = 45;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(36, 245);
+            this.label5.Location = new System.Drawing.Point(62, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 19);
             this.label5.TabIndex = 42;
@@ -291,22 +458,24 @@
             // btnInhabilitar
             // 
             this.btnInhabilitar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInhabilitar.Location = new System.Drawing.Point(785, 223);
+            this.btnInhabilitar.Location = new System.Drawing.Point(804, 281);
             this.btnInhabilitar.Name = "btnInhabilitar";
-            this.btnInhabilitar.Size = new System.Drawing.Size(105, 41);
+            this.btnInhabilitar.Size = new System.Drawing.Size(136, 41);
             this.btnInhabilitar.TabIndex = 44;
             this.btnInhabilitar.Text = "Inhabilitar";
             this.btnInhabilitar.UseVisualStyleBackColor = true;
+            this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(946, 223);
+            this.btnGuardar.Location = new System.Drawing.Point(974, 281);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(105, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(120, 41);
             this.btnGuardar.TabIndex = 43;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label2
             // 
@@ -357,6 +526,7 @@
             this.btnCerrarSesion.Text = "CERRAR SESION";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // pbCerrarSesion
             // 
@@ -403,129 +573,6 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "-";
             // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 57;
-            // 
-            // producto
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.producto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.producto.HeaderText = "Producto";
-            this.producto.MinimumWidth = 6;
-            this.producto.Name = "producto";
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Descripción";
-            this.description.MinimumWidth = 6;
-            this.description.Name = "description";
-            // 
-            // precioActual
-            // 
-            this.precioActual.HeaderText = "Precio Actual";
-            this.precioActual.MinimumWidth = 6;
-            this.precioActual.Name = "precioActual";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Existencia";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            // 
-            // categoria
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoria.DefaultCellStyle = dataGridViewCellStyle4;
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.MinimumWidth = 6;
-            this.categoria.Name = "categoria";
-            // 
-            // lblDesc
-            // 
-            this.lblDesc.AccessibleDescription = "Descripcion general del producto";
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesc.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDesc.Location = new System.Drawing.Point(36, 159);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(112, 19);
-            this.lblDesc.TabIndex = 50;
-            this.lblDesc.Text = "Descripcion:";
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(251, 156);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(334, 28);
-            this.txtDesc.TabIndex = 51;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(36, 202);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 19);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "Precio Actual:";
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(251, 199);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(127, 28);
-            this.txtPrecio.TabIndex = 53;
-            // 
-            // gbState
-            // 
-            this.gbState.Controls.Add(this.rbHabilitado);
-            this.gbState.Controls.Add(this.rbInhabilitado);
-            this.gbState.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            this.gbState.Location = new System.Drawing.Point(605, 107);
-            this.gbState.Name = "gbState";
-            this.gbState.Size = new System.Drawing.Size(463, 71);
-            this.gbState.TabIndex = 55;
-            this.gbState.TabStop = false;
-            this.gbState.Text = "Estado";
-            // 
-            // rbHabilitado
-            // 
-            this.rbHabilitado.AutoSize = true;
-            this.rbHabilitado.Checked = true;
-            this.rbHabilitado.Location = new System.Drawing.Point(61, 32);
-            this.rbHabilitado.Name = "rbHabilitado";
-            this.rbHabilitado.Size = new System.Drawing.Size(113, 23);
-            this.rbHabilitado.TabIndex = 1;
-            this.rbHabilitado.TabStop = true;
-            this.rbHabilitado.Text = "Habilitado";
-            this.rbHabilitado.UseVisualStyleBackColor = true;
-            // 
-            // rbInhabilitado
-            // 
-            this.rbInhabilitado.AutoSize = true;
-            this.rbInhabilitado.Location = new System.Drawing.Point(255, 32);
-            this.rbInhabilitado.Name = "rbInhabilitado";
-            this.rbInhabilitado.Size = new System.Drawing.Size(126, 23);
-            this.rbInhabilitado.TabIndex = 0;
-            this.rbInhabilitado.Text = "Inhabilitado";
-            this.rbInhabilitado.UseVisualStyleBackColor = true;
-            // 
             // FormInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -544,11 +591,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
+            this.gbState.ResumeLayout(false);
+            this.gbState.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).EndInit();
-            this.gbState.ResumeLayout(false);
-            this.gbState.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -579,13 +626,6 @@
         public System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnInhabilitar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioActual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
         public System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPrecio;
         public System.Windows.Forms.Label lblDesc;
@@ -593,5 +633,14 @@
         private System.Windows.Forms.GroupBox gbState;
         private System.Windows.Forms.RadioButton rbHabilitado;
         private System.Windows.Forms.RadioButton rbInhabilitado;
+        public System.Windows.Forms.Label lblFechaCaducidad;
+        private System.Windows.Forms.DateTimePicker dtpFechaCaducidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioActual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
     }
 }
