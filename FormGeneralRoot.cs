@@ -12,20 +12,14 @@ namespace chocoflantastico
 {
     public partial class FormGeneralRoot : Form
     {
-        public FormGeneralRoot(string nombre)
+        public FormGeneralRoot(string nombre, int rol)
         {
             InitializeComponent();
             lblUser.Text = nombre;
-        }
-
-        private void pbCerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if (rol == 2)
+            {
+                gbUsuarios.Visible = false;
+            }
         }
 
         private void btnInventario_Click(object sender, EventArgs e)

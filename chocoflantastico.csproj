@@ -52,12 +52,6 @@
     <Compile Include="FormGeneralRoot.Designer.cs">
       <DependentUpon>FormGeneralRoot.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGeneral.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormGeneral.Designer.cs">
-      <DependentUpon>FormGeneral.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,9 +75,6 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="FormGeneralRoot.resx">
       <DependentUpon>FormGeneralRoot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormGeneral.resx">
-      <DependentUpon>FormGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicioSesion.resx">
       <DependentUpon>FormInicioSesion.cs</DependentUpon>

@@ -35,7 +35,7 @@ namespace chocoflantastico
             this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlForm = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbUsuarios = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@ namespace chocoflantastico
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlForm.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).BeginInit();
             this.gbReporte.SuspendLayout();
@@ -129,7 +129,7 @@ namespace chocoflantastico
             // 
             this.pnlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlForm.Controls.Add(this.groupBox1);
+            this.pnlForm.Controls.Add(this.gbUsuarios);
             this.pnlForm.Controls.Add(this.btnCerrarSesion);
             this.pnlForm.Controls.Add(this.pbCerrarSesion);
             this.pnlForm.Controls.Add(this.gbReporte);
@@ -144,20 +144,20 @@ namespace chocoflantastico
             this.pnlForm.Size = new System.Drawing.Size(1180, 610);
             this.pnlForm.TabIndex = 2;
             // 
-            // groupBox1
+            // gbUsuarios
             // 
-            this.groupBox1.Controls.Add(this.pictureBox4);
-            this.groupBox1.Controls.Add(this.btnUsers);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(44)))), ((int)(((byte)(43)))));
-            this.groupBox1.Location = new System.Drawing.Point(331, 412);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(508, 138);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "USUARIOS";
+            this.gbUsuarios.Controls.Add(this.pictureBox4);
+            this.gbUsuarios.Controls.Add(this.btnUsers);
+            this.gbUsuarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(44)))), ((int)(((byte)(43)))));
+            this.gbUsuarios.Location = new System.Drawing.Point(331, 412);
+            this.gbUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.gbUsuarios.Name = "gbUsuarios";
+            this.gbUsuarios.Padding = new System.Windows.Forms.Padding(4);
+            this.gbUsuarios.Size = new System.Drawing.Size(508, 138);
+            this.gbUsuarios.TabIndex = 15;
+            this.gbUsuarios.TabStop = false;
+            this.gbUsuarios.Text = "USUARIOS";
             // 
             // pictureBox4
             // 
@@ -355,7 +355,7 @@ namespace chocoflantastico
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gbUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).EndInit();
             this.gbReporte.ResumeLayout(false);
@@ -385,7 +385,7 @@ namespace chocoflantastico
         private System.Windows.Forms.Button btnReporte;
         public System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.PictureBox pbCerrarSesion;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbUsuarios;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnUsers;
     }

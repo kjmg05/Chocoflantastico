@@ -28,14 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsers));
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.gbState = new System.Windows.Forms.GroupBox();
+            this.rbHabilitado = new System.Windows.Forms.RadioButton();
+            this.rbInhabilitado = new System.Windows.Forms.RadioButton();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnInhabilitar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pbCerrarSesion = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,41 +63,27 @@
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnInhabilitar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.gbState = new System.Windows.Forms.GroupBox();
-            this.rbInhabilitado = new System.Windows.Forms.RadioButton();
-            this.rbHabilitado = new System.Windows.Forms.RadioButton();
-            this.lblNombreUser = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProviderApp = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlForm.SuspendLayout();
+            this.gbState.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
-            this.gbState.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlForm
             // 
             this.pnlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlForm.Controls.Add(this.cmbRol);
+            this.pnlForm.Controls.Add(this.lblRol);
             this.pnlForm.Controls.Add(this.txtPassword);
             this.pnlForm.Controls.Add(this.lblPassword);
-            this.pnlForm.Controls.Add(this.textBox1);
-            this.pnlForm.Controls.Add(this.lblNombreUser);
-            this.pnlForm.Controls.Add(this.txtNombre);
+            this.pnlForm.Controls.Add(this.txtUsuario);
             this.pnlForm.Controls.Add(this.lblUsername);
             this.pnlForm.Controls.Add(this.gbState);
             this.pnlForm.Controls.Add(this.btnModificar);
@@ -99,6 +102,208 @@
             this.pnlForm.Size = new System.Drawing.Size(1180, 610);
             this.pnlForm.TabIndex = 4;
             // 
+            // cmbRol
+            // 
+            this.cmbRol.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.Location = new System.Drawing.Point(301, 241);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(257, 27);
+            this.cmbRol.TabIndex = 62;
+            this.cmbRol.Validating += new System.ComponentModel.CancelEventHandler(this.cmbRol_Validating);
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.DimGray;
+            this.lblRol.Location = new System.Drawing.Point(86, 244);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(39, 19);
+            this.lblRol.TabIndex = 61;
+            this.lblRol.Text = "Rol:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(301, 165);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(252, 28);
+            this.txtPassword.TabIndex = 60;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.lblPassword.Location = new System.Drawing.Point(86, 168);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(108, 19);
+            this.lblPassword.TabIndex = 59;
+            this.lblPassword.Text = "Contraseña:";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(301, 92);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(252, 28);
+            this.txtUsuario.TabIndex = 58;
+            this.txtUsuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsuario_Validating);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUsername.Location = new System.Drawing.Point(86, 95);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(73, 19);
+            this.lblUsername.TabIndex = 56;
+            this.lblUsername.Text = "Usuario:";
+            // 
+            // gbState
+            // 
+            this.gbState.Controls.Add(this.rbHabilitado);
+            this.gbState.Controls.Add(this.rbInhabilitado);
+            this.gbState.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.gbState.Location = new System.Drawing.Point(90, 317);
+            this.gbState.Name = "gbState";
+            this.gbState.Size = new System.Drawing.Size(463, 71);
+            this.gbState.TabIndex = 54;
+            this.gbState.TabStop = false;
+            this.gbState.Text = "Estado";
+            // 
+            // rbHabilitado
+            // 
+            this.rbHabilitado.AutoSize = true;
+            this.rbHabilitado.Checked = true;
+            this.rbHabilitado.Location = new System.Drawing.Point(61, 32);
+            this.rbHabilitado.Name = "rbHabilitado";
+            this.rbHabilitado.Size = new System.Drawing.Size(113, 23);
+            this.rbHabilitado.TabIndex = 1;
+            this.rbHabilitado.TabStop = true;
+            this.rbHabilitado.Text = "Habilitado";
+            this.rbHabilitado.UseVisualStyleBackColor = true;
+            // 
+            // rbInhabilitado
+            // 
+            this.rbInhabilitado.AutoSize = true;
+            this.rbInhabilitado.Location = new System.Drawing.Point(255, 32);
+            this.rbInhabilitado.Name = "rbInhabilitado";
+            this.rbInhabilitado.Size = new System.Drawing.Size(126, 23);
+            this.rbInhabilitado.TabIndex = 0;
+            this.rbInhabilitado.Text = "Inhabilitado";
+            this.rbInhabilitado.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(90, 461);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(105, 41);
+            this.btnModificar.TabIndex = 53;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnInhabilitar
+            // 
+            this.btnInhabilitar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInhabilitar.Location = new System.Drawing.Point(261, 461);
+            this.btnInhabilitar.Name = "btnInhabilitar";
+            this.btnInhabilitar.Size = new System.Drawing.Size(105, 41);
+            this.btnInhabilitar.TabIndex = 52;
+            this.btnInhabilitar.Text = "Inhabilitar";
+            this.btnInhabilitar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(422, 461);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(105, 41);
+            this.btnGuardar.TabIndex = 51;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // dgvUsers
+            // 
+            this.dgvUsers.AllowUserToAddRows = false;
+            this.dgvUsers.AllowUserToDeleteRows = false;
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsers.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvUsers.ColumnHeadersHeight = 29;
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.user,
+            this.rol,
+            this.state});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvUsers.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dgvUsers.Location = new System.Drawing.Point(639, 53);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvUsers.RowHeadersVisible = false;
+            this.dgvUsers.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvUsers.RowTemplate.Height = 24;
+            this.dgvUsers.Size = new System.Drawing.Size(424, 469);
+            this.dgvUsers.TabIndex = 50;
+            // 
+            // user
+            // 
+            this.user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.DefaultCellStyle = dataGridViewCellStyle2;
+            this.user.HeaderText = "Usuario";
+            this.user.MinimumWidth = 6;
+            this.user.Name = "user";
+            this.user.ReadOnly = true;
+            this.user.Width = 104;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol del Usuario";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // state
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.state.DefaultCellStyle = dataGridViewCellStyle3;
+            this.state.HeaderText = "Estado";
+            this.state.MinimumWidth = 6;
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            // 
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -115,6 +320,7 @@
             this.btnCerrarSesion.Text = "CERRAR SESION";
             this.btnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // pbCerrarSesion
             // 
@@ -186,6 +392,7 @@
             this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCerrar.TabIndex = 4;
             this.pbCerrar.TabStop = false;
+            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
             // 
             // pbMinimizar
             // 
@@ -221,200 +428,10 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // dgvUsers
+            // errorProviderApp
             // 
-            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvUsers.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUsers.ColumnHeadersHeight = 29;
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.user,
-            this.username,
-            this.state});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvUsers.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvUsers.Location = new System.Drawing.Point(634, 53);
-            this.dgvUsers.Name = "dgvUsers";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvUsers.RowHeadersVisible = false;
-            this.dgvUsers.RowHeadersWidth = 51;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(514, 469);
-            this.dgvUsers.TabIndex = 50;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(90, 461);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(105, 41);
-            this.btnModificar.TabIndex = 53;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnInhabilitar
-            // 
-            this.btnInhabilitar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInhabilitar.Location = new System.Drawing.Point(261, 461);
-            this.btnInhabilitar.Name = "btnInhabilitar";
-            this.btnInhabilitar.Size = new System.Drawing.Size(105, 41);
-            this.btnInhabilitar.TabIndex = 52;
-            this.btnInhabilitar.Text = "Inhabilitar";
-            this.btnInhabilitar.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(422, 461);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(105, 41);
-            this.btnGuardar.TabIndex = 51;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // gbState
-            // 
-            this.gbState.Controls.Add(this.rbHabilitado);
-            this.gbState.Controls.Add(this.rbInhabilitado);
-            this.gbState.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            this.gbState.Location = new System.Drawing.Point(90, 317);
-            this.gbState.Name = "gbState";
-            this.gbState.Size = new System.Drawing.Size(463, 71);
-            this.gbState.TabIndex = 54;
-            this.gbState.TabStop = false;
-            this.gbState.Text = "Estado";
-            // 
-            // rbInhabilitado
-            // 
-            this.rbInhabilitado.AutoSize = true;
-            this.rbInhabilitado.Location = new System.Drawing.Point(255, 32);
-            this.rbInhabilitado.Name = "rbInhabilitado";
-            this.rbInhabilitado.Size = new System.Drawing.Size(126, 23);
-            this.rbInhabilitado.TabIndex = 0;
-            this.rbInhabilitado.Text = "Inhabilitado";
-            this.rbInhabilitado.UseVisualStyleBackColor = true;
-            // 
-            // rbHabilitado
-            // 
-            this.rbHabilitado.AutoSize = true;
-            this.rbHabilitado.Checked = true;
-            this.rbHabilitado.Location = new System.Drawing.Point(61, 32);
-            this.rbHabilitado.Name = "rbHabilitado";
-            this.rbHabilitado.Size = new System.Drawing.Size(113, 23);
-            this.rbHabilitado.TabIndex = 1;
-            this.rbHabilitado.TabStop = true;
-            this.rbHabilitado.Text = "Habilitado";
-            this.rbHabilitado.UseVisualStyleBackColor = true;
-            // 
-            // lblNombreUser
-            // 
-            this.lblNombreUser.AutoSize = true;
-            this.lblNombreUser.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUser.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNombreUser.Location = new System.Drawing.Point(86, 94);
-            this.lblNombreUser.Name = "lblNombreUser";
-            this.lblNombreUser.Size = new System.Drawing.Size(167, 19);
-            this.lblNombreUser.TabIndex = 55;
-            this.lblNombreUser.Text = "Nombre Completo:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(301, 91);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(252, 28);
-            this.txtNombre.TabIndex = 57;
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsername.Location = new System.Drawing.Point(86, 160);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(73, 19);
-            this.lblUsername.TabIndex = 56;
-            this.lblUsername.Text = "Usuario:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(301, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 28);
-            this.textBox1.TabIndex = 58;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(301, 230);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(252, 28);
-            this.txtPassword.TabIndex = 60;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPassword.Location = new System.Drawing.Point(86, 233);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(108, 19);
-            this.lblPassword.TabIndex = 59;
-            this.lblPassword.Text = "Contraseña:";
-            // 
-            // user
-            // 
-            this.user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user.DefaultCellStyle = dataGridViewCellStyle2;
-            this.user.HeaderText = "Usuario";
-            this.user.MinimumWidth = 6;
-            this.user.Name = "user";
-            this.user.Width = 104;
-            // 
-            // username
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.DefaultCellStyle = dataGridViewCellStyle3;
-            this.username.HeaderText = "Nombre del Empleado";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            this.username.Width = 239;
-            // 
-            // state
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.state.DefaultCellStyle = dataGridViewCellStyle4;
-            this.state.HeaderText = "Estado";
-            this.state.MinimumWidth = 6;
-            this.state.Name = "state";
-            this.state.Width = 97;
+            this.errorProviderApp.ContainerControl = this;
+            this.errorProviderApp.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderApp.Icon")));
             // 
             // FormUsers
             // 
@@ -428,15 +445,16 @@
             this.Text = "FormUsers";
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
+            this.gbState.ResumeLayout(false);
+            this.gbState.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrarSesion)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
-            this.gbState.ResumeLayout(false);
-            this.gbState.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,12 +481,13 @@
         private System.Windows.Forms.RadioButton rbInhabilitado;
         private System.Windows.Forms.TextBox txtPassword;
         public System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.Label lblNombreUser;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.ComboBox cmbRol;
+        public System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn user;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn state;
+        private System.Windows.Forms.ErrorProvider errorProviderApp;
     }
 }
