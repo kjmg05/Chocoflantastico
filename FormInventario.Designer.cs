@@ -30,11 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
@@ -42,6 +39,8 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.cmbProducto = new System.Windows.Forms.ComboBox();
+            this.lblProd = new System.Windows.Forms.Label();
             this.lblFechaCaducidad = new System.Windows.Forms.Label();
             this.dtpFechaCaducidad = new System.Windows.Forms.DateTimePicker();
             this.gbState = new System.Windows.Forms.GroupBox();
@@ -52,13 +51,6 @@
             this.lblDesc = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nudExistecia = new System.Windows.Forms.NumericUpDown();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -154,6 +146,8 @@
             // 
             this.pnlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.pnlForm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlForm.Controls.Add(this.cmbProducto);
+            this.pnlForm.Controls.Add(this.lblProd);
             this.pnlForm.Controls.Add(this.lblFechaCaducidad);
             this.pnlForm.Controls.Add(this.dtpFechaCaducidad);
             this.pnlForm.Controls.Add(this.gbState);
@@ -186,12 +180,33 @@
             this.pnlForm.Size = new System.Drawing.Size(1180, 665);
             this.pnlForm.TabIndex = 18;
             // 
+            // cmbProducto
+            // 
+            this.cmbProducto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProducto.FormattingEnabled = true;
+            this.cmbProducto.Location = new System.Drawing.Point(287, 121);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(257, 27);
+            this.cmbProducto.TabIndex = 1;
+            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
+            // 
+            // lblProd
+            // 
+            this.lblProd.AutoSize = true;
+            this.lblProd.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProd.ForeColor = System.Drawing.Color.DimGray;
+            this.lblProd.Location = new System.Drawing.Point(72, 124);
+            this.lblProd.Name = "lblProd";
+            this.lblProd.Size = new System.Drawing.Size(87, 19);
+            this.lblProd.TabIndex = 59;
+            this.lblProd.Text = "Producto:";
+            // 
             // lblFechaCaducidad
             // 
             this.lblFechaCaducidad.AutoSize = true;
             this.lblFechaCaducidad.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaCaducidad.ForeColor = System.Drawing.Color.DimGray;
-            this.lblFechaCaducidad.Location = new System.Drawing.Point(627, 224);
+            this.lblFechaCaducidad.Location = new System.Drawing.Point(627, 267);
             this.lblFechaCaducidad.Name = "lblFechaCaducidad";
             this.lblFechaCaducidad.Size = new System.Drawing.Size(163, 19);
             this.lblFechaCaducidad.TabIndex = 57;
@@ -199,10 +214,10 @@
             // 
             // dtpFechaCaducidad
             // 
-            this.dtpFechaCaducidad.Location = new System.Drawing.Point(809, 222);
+            this.dtpFechaCaducidad.Location = new System.Drawing.Point(809, 265);
             this.dtpFechaCaducidad.Name = "dtpFechaCaducidad";
             this.dtpFechaCaducidad.Size = new System.Drawing.Size(285, 22);
-            this.dtpFechaCaducidad.TabIndex = 56;
+            this.dtpFechaCaducidad.TabIndex = 10;
             this.dtpFechaCaducidad.Validating += new System.ComponentModel.CancelEventHandler(this.dtpFechaCaducidad_Validating);
             // 
             // gbState
@@ -211,10 +226,10 @@
             this.gbState.Controls.Add(this.rbInhabilitado);
             this.gbState.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.gbState.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.gbState.Location = new System.Drawing.Point(631, 114);
+            this.gbState.Location = new System.Drawing.Point(631, 157);
             this.gbState.Name = "gbState";
             this.gbState.Size = new System.Drawing.Size(463, 71);
-            this.gbState.TabIndex = 55;
+            this.gbState.TabIndex = 7;
             this.gbState.TabStop = false;
             this.gbState.Text = "Estado";
             // 
@@ -225,7 +240,7 @@
             this.rbHabilitado.Location = new System.Drawing.Point(61, 32);
             this.rbHabilitado.Name = "rbHabilitado";
             this.rbHabilitado.Size = new System.Drawing.Size(113, 23);
-            this.rbHabilitado.TabIndex = 1;
+            this.rbHabilitado.TabIndex = 8;
             this.rbHabilitado.TabStop = true;
             this.rbHabilitado.Text = "Habilitado";
             this.rbHabilitado.UseVisualStyleBackColor = true;
@@ -236,7 +251,7 @@
             this.rbInhabilitado.Location = new System.Drawing.Point(255, 32);
             this.rbInhabilitado.Name = "rbInhabilitado";
             this.rbInhabilitado.Size = new System.Drawing.Size(126, 23);
-            this.rbInhabilitado.TabIndex = 0;
+            this.rbInhabilitado.TabIndex = 9;
             this.rbInhabilitado.Text = "Inhabilitado";
             this.rbInhabilitado.UseVisualStyleBackColor = true;
             // 
@@ -245,7 +260,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(62, 209);
+            this.label7.Location = new System.Drawing.Point(72, 254);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 19);
             this.label7.TabIndex = 52;
@@ -254,10 +269,10 @@
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(277, 206);
+            this.txtPrecio.Location = new System.Drawing.Point(287, 251);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(127, 28);
-            this.txtPrecio.TabIndex = 53;
+            this.txtPrecio.TabIndex = 4;
             this.txtPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrecio_Validating);
             // 
             // lblDesc
@@ -266,7 +281,7 @@
             this.lblDesc.AutoSize = true;
             this.lblDesc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDesc.Location = new System.Drawing.Point(62, 166);
+            this.lblDesc.Location = new System.Drawing.Point(72, 211);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(112, 19);
             this.lblDesc.TabIndex = 50;
@@ -275,10 +290,10 @@
             // txtDesc
             // 
             this.txtDesc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(277, 163);
+            this.txtDesc.Location = new System.Drawing.Point(287, 208);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(334, 28);
-            this.txtDesc.TabIndex = 51;
+            this.txtDesc.TabIndex = 3;
             this.txtDesc.Validating += new System.ComponentModel.CancelEventHandler(this.txtDesc_Validating);
             // 
             // dgvInventario
@@ -296,109 +311,35 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvInventario.ColumnHeadersHeight = 32;
-            this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.producto,
-            this.description,
-            this.precioActual,
-            this.cantidad,
-            this.estado,
-            this.categoria});
+            this.dgvInventario.ColumnHeadersHeight = 11;
             this.dgvInventario.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvInventario.Location = new System.Drawing.Point(40, 332);
+            this.dgvInventario.Location = new System.Drawing.Point(40, 349);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventario.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventario.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventario.RowHeadersVisible = false;
             this.dgvInventario.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvInventario.RowTemplate.Height = 24;
-            this.dgvInventario.Size = new System.Drawing.Size(1084, 282);
-            this.dgvInventario.TabIndex = 49;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 57;
-            // 
-            // producto
-            // 
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.producto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.producto.FillWeight = 121.8533F;
-            this.producto.HeaderText = "Producto";
-            this.producto.MinimumWidth = 6;
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.FillWeight = 158.8191F;
-            this.description.HeaderText = "Descripción";
-            this.description.MinimumWidth = 6;
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // precioActual
-            // 
-            this.precioActual.FillWeight = 90.68002F;
-            this.precioActual.HeaderText = "Precio Actual";
-            this.precioActual.MinimumWidth = 6;
-            this.precioActual.Name = "precioActual";
-            this.precioActual.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.FillWeight = 85.39642F;
-            this.cantidad.HeaderText = "Existencia";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.FalseValue = "Inactivo";
-            this.estado.FillWeight = 47.59894F;
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.estado.TrueValue = "Activo";
-            // 
-            // categoria
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoria.DefaultCellStyle = dataGridViewCellStyle4;
-            this.categoria.FillWeight = 95.65217F;
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.MinimumWidth = 6;
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
+            this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvInventario.RowTemplate.Height = 24;
+            this.dgvInventario.Size = new System.Drawing.Size(1084, 265);
+            this.dgvInventario.TabIndex = 49;
+            this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
             // 
             // nudExistecia
             // 
             this.nudExistecia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExistecia.Location = new System.Drawing.Point(277, 248);
+            this.nudExistecia.Location = new System.Drawing.Point(287, 293);
             this.nudExistecia.Name = "nudExistecia";
             this.nudExistecia.Size = new System.Drawing.Size(92, 28);
-            this.nudExistecia.TabIndex = 48;
+            this.nudExistecia.TabIndex = 5;
             this.nudExistecia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudExistecia.Validating += new System.ComponentModel.CancelEventHandler(this.nudExistecia_Validating);
             // 
@@ -406,10 +347,10 @@
             // 
             this.cmbCategoria.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(277, 289);
+            this.cmbCategoria.Location = new System.Drawing.Point(809, 118);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(257, 27);
-            this.cmbCategoria.TabIndex = 47;
+            this.cmbCategoria.Size = new System.Drawing.Size(290, 27);
+            this.cmbCategoria.TabIndex = 6;
             this.cmbCategoria.Validating += new System.ComponentModel.CancelEventHandler(this.cmbCategoria_Validating);
             // 
             // lblNombre
@@ -417,7 +358,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNombre.Location = new System.Drawing.Point(62, 124);
+            this.lblNombre.Location = new System.Drawing.Point(72, 169);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(190, 19);
             this.lblNombre.TabIndex = 40;
@@ -426,10 +367,10 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(277, 121);
+            this.txtNombre.Location = new System.Drawing.Point(287, 166);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(252, 28);
-            this.txtNombre.TabIndex = 46;
+            this.txtNombre.Size = new System.Drawing.Size(257, 28);
+            this.txtNombre.TabIndex = 2;
             this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // lblCategoria
@@ -437,7 +378,7 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCategoria.Location = new System.Drawing.Point(62, 292);
+            this.lblCategoria.Location = new System.Drawing.Point(627, 121);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(95, 19);
             this.lblCategoria.TabIndex = 41;
@@ -446,10 +387,10 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(631, 281);
+            this.btnModificar.Location = new System.Drawing.Point(631, 302);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(136, 41);
-            this.btnModificar.TabIndex = 45;
+            this.btnModificar.TabIndex = 13;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -459,7 +400,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(62, 252);
+            this.label5.Location = new System.Drawing.Point(72, 297);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 19);
             this.label5.TabIndex = 42;
@@ -468,10 +409,10 @@
             // btnInhabilitar
             // 
             this.btnInhabilitar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInhabilitar.Location = new System.Drawing.Point(804, 281);
+            this.btnInhabilitar.Location = new System.Drawing.Point(804, 302);
             this.btnInhabilitar.Name = "btnInhabilitar";
             this.btnInhabilitar.Size = new System.Drawing.Size(136, 41);
-            this.btnInhabilitar.TabIndex = 44;
+            this.btnInhabilitar.TabIndex = 12;
             this.btnInhabilitar.Text = "Inhabilitar";
             this.btnInhabilitar.UseVisualStyleBackColor = true;
             this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click);
@@ -479,10 +420,10 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(974, 281);
+            this.btnGuardar.Location = new System.Drawing.Point(974, 302);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 41);
-            this.btnGuardar.TabIndex = 43;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -651,13 +592,8 @@
         private System.Windows.Forms.RadioButton rbInhabilitado;
         public System.Windows.Forms.Label lblFechaCaducidad;
         private System.Windows.Forms.DateTimePicker dtpFechaCaducidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioActual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
         private System.Windows.Forms.ErrorProvider errorProviderApp;
+        private System.Windows.Forms.ComboBox cmbProducto;
+        public System.Windows.Forms.Label lblProd;
     }
 }

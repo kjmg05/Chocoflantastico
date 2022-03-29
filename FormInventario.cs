@@ -12,9 +12,17 @@ namespace chocoflantastico
 {
     public partial class FormInventario : Form
     {
+        Usuario usuario = new Usuario();
         public FormInventario()
         {
             InitializeComponent();
+            cmbCategoria.SelectedIndex = -1;
+            cmbProducto.SelectedIndex = -1;
+            usuario.Inventario("SELECT * FROM dbo.Inventario", dgvInventario);
+            usuario.ComboBoxData(cmbCategoria, "SELECT * FROM dbo.Categoria");
+            usuario.ComboBoxData(cmbProducto, "SELECT * FROM dbo.Products");
+            cmbCategoria.SelectedIndex = -1;
+            cmbProducto.SelectedIndex = -1;
             if (dgvInventario.SelectedRows.Count == 0)
             {
                 btnInhabilitar.Enabled = false;
@@ -45,7 +53,38 @@ namespace chocoflantastico
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show("Demo App - Message!");
+                int id;
+                if(cmbProducto.SelectedIndex != -1)
+                {
+                    id = cmbProducto.SelectedIndex + 1;
+                }
+                else
+                {
+                    id = 0;
+                }
+                int estado ;
+                int cat = cmbCategoria.SelectedIndex + 1;
+                bool isChecked = rbHabilitado.Checked;
+                if (isChecked)
+                    estado = 1;
+                else
+                    estado = 0;
+                usuario.connection.Open();
+                usuario.GuardarInventario("exec IngresarInventario '" + id + "','" + txtNombre.Text + "', '" + txtDesc.Text + "', '" + txtPrecio.Text + "'," +
+                    " '" + nudExistecia.Value + "', '" + estado + "', '" + cat + "', '" + dtpFechaCaducidad.Value.ToString("yyyy-MM-dd") + "'",
+                    id, txtNombre.Text, txtDesc.Text, double.Parse(txtPrecio.Text), int.Parse(nudExistecia.Value.ToString()), estado, cat, 
+                    dtpFechaCaducidad.Value.ToString("yyyy-MM-dd")
+                );
+                usuario.connection.Close();
+                usuario.Inventario("SELECT * FROM dbo.Inventario", dgvInventario);
+                txtNombre.Clear();
+                txtDesc.Clear();
+                txtPrecio.Clear();
+                nudExistecia.Value = 0;
+                cmbProducto.SelectedIndex = -1;
+                cmbCategoria.SelectedIndex = -1;
+                cmbProducto.Enabled = true;
+                txtNombre.Enabled = true;
             }
         }
 
@@ -103,21 +142,6 @@ namespace chocoflantastico
             }
         }
 
-        private void cmbCategoria_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(cmbCategoria.SelectedText))
-            {
-                e.Cancel = true;
-                cmbCategoria.Focus();
-                errorProviderApp.SetError(cmbCategoria, "Seleccione una opción!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProviderApp.SetError(cmbCategoria, "");
-            }
-        }
-
         private void nudExistecia_Validating(object sender, CancelEventArgs e)
         {
             if (nudExistecia.Value == 0)
@@ -130,6 +154,16 @@ namespace chocoflantastico
             {
                 e.Cancel = false;
                 errorProviderApp.SetError(nudExistecia, "");
+            }
+        }
+
+        private void cmbCategoria_Validating(object sender, CancelEventArgs e)
+        {
+            if (cmbCategoria.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                cmbCategoria.Focus();
+                errorProviderApp.SetError(cmbCategoria, "Seleccione una opcion!");
             }
         }
 
@@ -146,6 +180,17 @@ namespace chocoflantastico
                 e.Cancel = false;
                 errorProviderApp.SetError(dtpFechaCaducidad, "");
             }
+        }
+
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                btnInhabilitar.Enabled = true;
+                btnModificar.Enabled = true;
+        }
+
+        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtNombre.Text = cmbProducto.Text;
         }
     }
 }
