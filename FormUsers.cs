@@ -12,9 +12,13 @@ namespace chocoflantastico
 {
     public partial class FormUsers : Form
     {
+        Usuario usuario = new Usuario();
         public FormUsers()
         {
             InitializeComponent();
+            cmbRol.SelectedIndex = -1;
+            usuario.Inventario("SELECT * FROM dbo.Users", dgvUsers);
+            usuario.ComboBoxData(cmbRol, "SELECT * FROM dbo.Rol");
             if (dgvUsers.SelectedRows.Count == 0)
             {
                 btnInhabilitar.Enabled = false;
@@ -72,7 +76,7 @@ namespace chocoflantastico
 
         private void cmbRol_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cmbRol.SelectedText))
+            if (cmbRol.SelectedIndex == -1)
             {
                 e.Cancel = true;
                 cmbRol.Focus();
@@ -89,7 +93,23 @@ namespace chocoflantastico
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show("Demo App - Message!");
+                int id = cmbRol.SelectedIndex + 1;
+ 
+                int estado;
+                bool isChecked = rbHabilitado.Checked;
+                if (isChecked)
+                    estado = 1;
+                else
+                    estado = 0;
+                usuario.connection.Open();
+                usuario.GuardarUsuario("exec IngresarUsuario '" + txtUsuario.Text + "', '" + txtPassword.Text + "', '" + id + "', '" + estado + "'", 
+                    txtUsuario.Text, txtPassword.Text, id, estado);
+                usuario.connection.Close();
+                usuario.Inventario("SELECT * FROM dbo.Users", dgvUsers);
+                txtUsuario.Clear();
+                txtPassword.Clear();
+                cmbRol.SelectedIndex = -1;
+                rbHabilitado.Checked = true;
             }
         }
     }

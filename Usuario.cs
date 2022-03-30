@@ -49,6 +49,27 @@ namespace chocoflantastico
             }
         }
 
+        public void GuardarUsuario(string comando, string username, string password, int idRol, int estado)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand(comando, connection);
+                command.Parameters.AddWithValue("@nombre", username);
+                command.Parameters.AddWithValue("@pass", password);
+                command.Parameters.AddWithValue("@idRol", idRol);
+                command.Parameters.AddWithValue("@estado", estado);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
         public void GuardarInventario(string comando, int id,  string nombre, string desc, double precio, int existecia, 
             int estado, int categoria, string fechaCaducidad)
         {
