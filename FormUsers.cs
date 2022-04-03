@@ -101,16 +101,26 @@ namespace chocoflantastico
                     estado = 1;
                 else
                     estado = 0;
-                usuario.connection.Open();
+                usuario.sc.Open();
                 usuario.GuardarUsuario("exec IngresarUsuario '" + txtUsuario.Text + "', '" + txtPassword.Text + "', '" + id + "', '" + estado + "'", 
                     txtUsuario.Text, txtPassword.Text, id, estado);
-                usuario.connection.Close();
+                usuario.sc.Close();
                 usuario.Inventario("SELECT * FROM dbo.Users", dgvUsers);
                 txtUsuario.Clear();
                 txtPassword.Clear();
                 cmbRol.SelectedIndex = -1;
                 rbHabilitado.Checked = true;
             }
+        }
+
+        private void rbHabilitado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

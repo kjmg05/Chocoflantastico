@@ -61,7 +61,7 @@ namespace chocoflantastico
 
             usuario.User = txtUser.Text;
             usuario.Pass = txtPass.Text;
-            usuario.connection.Open();
+            usuario.sc.Open();
             if (usuario.Autenticacion("exec InicioSesion '" + usuario.User + "', '" + usuario.Pass + "'"))
             {
                 this.Hide();
@@ -72,7 +72,7 @@ namespace chocoflantastico
                 lblError.Visible = true;
                 lblError.Text = "Usuario y/o Contraseña Incorrecto";
             }
-            usuario.connection.Close();
+            usuario.sc.Close();
         }
     }
 }

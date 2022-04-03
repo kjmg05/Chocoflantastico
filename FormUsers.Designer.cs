@@ -181,6 +181,7 @@
             this.rbHabilitado.TabStop = true;
             this.rbHabilitado.Text = "Habilitado";
             this.rbHabilitado.UseVisualStyleBackColor = true;
+            this.rbHabilitado.CheckedChanged += new System.EventHandler(this.rbHabilitado_CheckedChanged);
             // 
             // rbInhabilitado
             // 
@@ -369,6 +370,7 @@
             this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMinimizar.TabIndex = 3;
             this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             // 
             // lblUser
             // 

@@ -13,15 +13,30 @@ namespace chocoflantastico
     {
         private string user;
         private string pass;
+        public SqlConnection sc = new SqlConnection();
+        SqlDataAdapter da;
+        DataTable dt;
 
         public string User { get => user; set => user = value; }
         public string Pass { get => pass; set => pass = value; }
 
-        public SqlConnection connection = new SqlConnection("Data Source = localhost; Initial Catalog = chocoflantastico; Integrated Security = True");
+        string  connection = "Data Source=DESKTOP-V73SHE5\\SQLEXPRESS;Initial Catalog=chocoflantastico;Integrated Security=True";
+        public Usuario()
+        {
+            sc.ConnectionString = connection;
+        }
+
+
+    
+
+        public void CerrarConexion()
+        {
+            sc.Close();
+        }
 
         public bool Autenticacion(string comando)
         {
-            SqlCommand command = new SqlCommand(comando, connection);
+            SqlCommand command = new SqlCommand(comando, sc);
             command.Parameters.AddWithValue("@user", user);
             command.Parameters.AddWithValue("@pass", pass);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -53,7 +68,7 @@ namespace chocoflantastico
         {
             try
             {
-                SqlCommand command = new SqlCommand(comando, connection);
+                SqlCommand command = new SqlCommand(comando, sc);
                 command.Parameters.AddWithValue("@nombre", username);
                 command.Parameters.AddWithValue("@pass", password);
                 command.Parameters.AddWithValue("@idRol", idRol);
@@ -75,7 +90,7 @@ namespace chocoflantastico
         {
             try
             {
-                SqlCommand command = new SqlCommand(comando, connection);
+                SqlCommand command = new SqlCommand(comando, sc);
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@nombre", nombre);
                 command.Parameters.AddWithValue("@desc", desc);
@@ -100,7 +115,7 @@ namespace chocoflantastico
         {
             try
             {
-                SqlCommand command = new SqlCommand(comando, connection);
+                SqlCommand command = new SqlCommand(comando, sc);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
@@ -121,7 +136,7 @@ namespace chocoflantastico
         {
             try
             {
-                SqlCommand command = new SqlCommand(comando, connection);
+                SqlCommand command = new SqlCommand(comando, sc);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
@@ -135,5 +150,22 @@ namespace chocoflantastico
             }
 
         }
+
+        public void CualquierTabla(DataGridView dgv, string Query)
+        {
+            try
+            {
+                da = new SqlDataAdapter(Query, sc);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no ha sido posible establecer conexion" + ex.ToString()); ;
+            }
+        }
+
     }
 }

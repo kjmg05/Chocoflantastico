@@ -69,13 +69,13 @@ namespace chocoflantastico
                     estado = 1;
                 else
                     estado = 0;
-                usuario.connection.Open();
+                usuario.sc.Open();
                 usuario.GuardarInventario("exec IngresarInventario '" + id + "','" + txtNombre.Text + "', '" + txtDesc.Text + "', '" + txtPrecio.Text + "'," +
                     " '" + nudExistecia.Value + "', '" + estado + "', '" + cat + "', '" + dtpFechaCaducidad.Value.ToString("yyyy-MM-dd") + "'",
                     id, txtNombre.Text, txtDesc.Text, double.Parse(txtPrecio.Text), int.Parse(nudExistecia.Value.ToString()), estado, cat, 
                     dtpFechaCaducidad.Value.ToString("yyyy-MM-dd")
                 );
-                usuario.connection.Close();
+                usuario.sc.Close();
                 usuario.Inventario("SELECT * FROM dbo.Inventario", dgvInventario);
                 txtNombre.Clear();
                 txtDesc.Clear();
@@ -191,6 +191,11 @@ namespace chocoflantastico
         private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtNombre.Text = cmbProducto.Text;
+        }
+
+        private void pbMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

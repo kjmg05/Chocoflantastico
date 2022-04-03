@@ -259,6 +259,7 @@ namespace chocoflantastico
             this.btnReporte.TabIndex = 0;
             this.btnReporte.Text = "ENTRAR";
             this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // gbInventario
             // 
