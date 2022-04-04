@@ -20,7 +20,7 @@ namespace chocoflantastico
         public string User { get => user; set => user = value; }
         public string Pass { get => pass; set => pass = value; }
 
-        string  connection = "Data Source=DESKTOP-V73SHE5\\SQLEXPRESS;Initial Catalog=chocoflantastico;Integrated Security=True";
+        string  connection = "Data Source=DESKTOP-PE4OUB7;Initial Catalog=chocoflantastico;Integrated Security=True";
         public Usuario()
         {
             sc.ConnectionString = connection;

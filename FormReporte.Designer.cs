@@ -122,6 +122,7 @@
             this.pbCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCerrarSesion.TabIndex = 16;
             this.pbCerrarSesion.TabStop = false;
+            this.pbCerrarSesion.Click += new System.EventHandler(this.pbCerrarSesion_Click);
             // 
             // label2
             // 
@@ -203,7 +204,7 @@
             this.lblUser.ForeColor = System.Drawing.Color.White;
             this.lblUser.Location = new System.Drawing.Point(119, 11);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(109, 27);
+            this.lblUser.Size = new System.Drawing.Size(113, 28);
             this.lblUser.TabIndex = 2;
             this.lblUser.Text = "USUARIO";
             // 

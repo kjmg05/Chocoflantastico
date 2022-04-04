@@ -12,10 +12,12 @@ namespace chocoflantastico
 {
     public partial class FormGeneralRoot : Form
     {
+        string user = "";
         public FormGeneralRoot(string nombre, int rol)
         {
             InitializeComponent();
             lblUser.Text = nombre;
+            user = nombre;
             if (rol == 2)
             {
                 gbUsuarios.Visible = false;
@@ -24,7 +26,7 @@ namespace chocoflantastico
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             new FormInventario().Show();
         }
 
@@ -62,13 +64,13 @@ namespace chocoflantastico
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             new FormUsers().Show();
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             new FormReporte().Show();
         }
     }

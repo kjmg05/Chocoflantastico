@@ -62,7 +62,7 @@ namespace chocoflantastico
             usuario.User = txtUser.Text;
             usuario.Pass = txtPass.Text;
             usuario.sc.Open();
-            if (usuario.Autenticacion("exec InicioSesion '" + usuario.User + "', '" + usuario.Pass + "'"))
+            if (usuario.Autenticacion("exec InicioSesion '" + usuario.Pass + "', '" + usuario.User+ "'"))
             {
                 this.Hide();
             }

@@ -18,7 +18,7 @@ namespace chocoflantastico
             InitializeComponent();
             cmbRol.SelectedIndex = -1;
             usuario.Inventario("SELECT * FROM dbo.Users", dgvUsers);
-            usuario.ComboBoxData(cmbRol, "SELECT * FROM dbo.Rol");
+            usuario.ComboBoxData(cmbRol, "SELECT * FROM dbo.Roles");
             if (dgvUsers.SelectedRows.Count == 0)
             {
                 btnInhabilitar.Enabled = false;
@@ -37,11 +37,10 @@ namespace chocoflantastico
 
         private void pbCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro que desea cerrar la aplicación", "CHOCOFLANTASTICO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+            string user = "Oscar";
+            this.Close();
+            new FormGeneralRoot("oscar",1).Show();
+
         }
 
         private void txtUsuario_Validating(object sender, CancelEventArgs e)

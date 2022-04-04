@@ -197,5 +197,11 @@ namespace chocoflantastico
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void pbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new FormGeneralRoot("oscar", 1).Show();
+        }
     }
 }
